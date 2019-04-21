@@ -1,0 +1,149 @@
+<!Doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/header-fixed.css">
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="jq.js"></script>
+</head>
+
+<body>
+    <section>
+        <header class="header-fixed">
+            <div class="header-limiter">
+                <h1><a href="#">Andrey's <span>Sandbox</span></a></h1>
+                <nav>
+                    <a href="grid.html">Grid Example</a>
+                    <a href="#" class="selected">Blog</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">About</a>
+                    <a href="#">Faq</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </header>
+    </section>
+    <section class="contents">
+        <h1>This is a test page</h1>
+        <p>I will be testing <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr
+                title="Cascading Style Sheet">CSS</abbr> and <abbr title="Java Script">JS</abbr> things here. This is
+            gonna get weird.</p>
+        <blockquote><i>Shit negro, that's all you had to say!</i></blockquote>
+    </section>
+
+    <!-- This element prevents the content of the page from jumping up -->
+    <div class="header-fixed-placeholder"></div>
+
+    <section>
+        <div class="img-pos">
+            <figure>
+                <img class="img" src="beatle.jpg" alt="VW Beatle">
+                <figcaption>Fig1. - Original VW Beatle found on the streets of Whatever</figcaption>
+            </figure>
+        </div>
+        <div class="aside">
+        <aside>
+            <details>
+                <summary>Site contents</summary>
+                <ul>
+                    <li>I</li>
+                    <li>have</li>
+                    <li>no</li>
+                    <li>idea</li>
+                    <li>Also, this text <mark>is highlighted</mark></li>
+                </ul>
+            </details>
+        </aside>
+    </div>
+    </section>
+
+    <section>
+        <div class=coolbutton>
+            <a data-toggle='collapse' href='#collapseExample' id='collapseExample1'
+                class='text-center btn btn-default'>Read
+                More</a>
+            <div class='collapse' id='collapseExample2'>
+                <p class='readmore'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contents">
+        <h3>This is a code snippet</h3>
+        <pre>
+                    $(document).ready(function(){
+                        $('#collapseExample1').on('click', function () {
+                         var text=$('#collapseExample1').text();
+                         if(text === "Read More"){
+                           $(this).html('Read Less');
+                         } else{
+                           $(this).text('Read More');
+                        }
+                       });
+                       });
+            </pre>
+        <p>And this is an <code>inline code</code></p>
+    </section>
+
+    <section>
+        <div class="img-pos">
+            <img class="img" src="sn.jpg" alt="Starry Night">
+            <p>This is a <cite>Starry Night</cite> by Van Gogh</p>
+        </div>
+    </section>
+
+
+
+    <footer class="contents footer">
+        <address>
+            <a href="mailto:omen.by@gmail.com">Andrey N</a><br>
+            710 Bay Ave<br>
+            Ocean City, NJ<br>
+            08226
+        </address>
+
+
+    </footer>
+
+</body>
+
+<!--- Script for fixed nav --->
+<script>
+    $(document).ready(function () {
+
+        var showHeaderAt = 150;
+
+        var win = $(window),
+            body = $('body');
+
+        // Show the fixed header only on larger screen devices
+
+        if (win.width() > 600) {
+
+            // When we scroll more than 150px down, we set the
+            // "fixed" class on the body element.
+
+            win.on('scroll', function (e) {
+
+                if (win.scrollTop() > showHeaderAt) {
+                    body.addClass('fixed');
+                } else {
+                    body.removeClass('fixed');
+                }
+            });
+
+        }
+
+    });
+</script>
+<!--- End of Script for fixed nav --->
+
+</html>
